@@ -15,8 +15,10 @@ void __attribute__((noinline)) dot_product(const uint8_t *a, const uint8_t *b, u
 {
   for (int i = 0; i < 4; i++) {
     int ii = i * 4;
+    const uint8_t *aa = &a[ii];
+    const uint8_t *bb = &b[ii];
     for (int j = 0; j < 4; j++) {
-      sum[i] += a[ii + j] * b[ii + j];
+      sum[i] += aa[j] * bb[j];
     }
   }
 }
